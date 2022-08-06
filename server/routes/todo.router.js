@@ -33,4 +33,32 @@ todoRouter.get('/', (req, res) => {
     })
 })
 
+todoRouter.put('/:id', (req,res) => {
+    const id = req.params.id;
+    queryText =`
+        UPDATE "todo"
+        SET "complete" = TRUE
+        WHERE "id" = $1;`
+    pool.query(queryText, [id]).then(result => {
+        res.sendStatus(200)
+    }).catch(err => {
+        console.log(err)
+        res.sendStatus(500);
+    })
+})
+
+todoRouter.delete('/:id', (req, res) => {
+    const id = req.params.id;
+    console.log(id)
+    const queryText =`
+        DELETE FROM "todo"
+        WHERE "id" = $1;`
+    pool.query(queryText, [id]).then(result => {
+        res.sendStatus(200);
+    }).catch( (err) => {
+        console.log(err);
+        res.sendStatus(500);
+    })
+})
+
 module.exports = todoRouter;
