@@ -10,6 +10,33 @@
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
-    
+    <header>
+        <h1>TODO LIST!</h1>
+    </header>
+    <main>
+        <div>
+            <h2>Add a task:</h2>
+            <input type="text" placeholder="Task" id="task"><input type="text" placeholder="Notes" id="notes"><button id="addTask">Add Task!</button>
+        </div>
+        <div>
+            <h3>Tasks:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Complete?</th>
+                        <th>Task</th>
+                        <th>Notes</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tasks">
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
 </body>
 </html>

@@ -1,3 +1,18 @@
 * {
     background-color: gray;
 }
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+table th {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+table td {
+    border: 1px solid black;
+    padding: 10px;
+}
