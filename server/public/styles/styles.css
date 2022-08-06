@@ -1,4 +1,4 @@
-* {
+body {
     background-color: gray;
 }
 
@@ -15,4 +15,12 @@ table th {
 table td {
     border: 1px solid black;
     padding: 10px;
+}
+
+.complete{
+    background-color: steelblue;
+}
+
+.incomplete {
+    background-color: hotpink;
 }

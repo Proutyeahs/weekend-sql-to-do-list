@@ -81,7 +81,7 @@ function taskToDOM(tasks) {
     for (let task of tasks) {
         if (task.complete === false) {
             $('#tasks').append(`
-                <tr data-id=${task.id}>
+                <tr class="incomplete" data-id=${task.id}>
                     <td><button id="complete">Done!</button></td>
                     <td>${task.task}</td>
                     <td>${task.notes}</td>
@@ -90,7 +90,7 @@ function taskToDOM(tasks) {
             `);
         } else {
             $('#tasks').append(`
-                <tr data-id=${task.id}>
+                <tr class="complete" data-id=${task.id}>
                     <td>✓</td>
                     <td>${task.task}</td>
                     <td>${task.notes}</td>
