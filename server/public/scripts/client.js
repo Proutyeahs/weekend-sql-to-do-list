@@ -82,10 +82,10 @@ function taskToDOM(tasks) {
         if (task.complete === false) {
             $('#tasks').append(`
                 <tr class="incomplete" data-id=${task.id}>
-                    <td><button id="complete">Done!</button></td>
+                    <td><button class="btn btn-success" id="complete">Done!</button></td>
                     <td>${task.task}</td>
                     <td>${task.notes}</td>
-                    <td><button id="deleteBtn">Delete</button></td>
+                    <td><button class="btn btn-danger" id="deleteBtn">Delete</button></td>
                 </tr>
             `);
         } else {
@@ -94,7 +94,7 @@ function taskToDOM(tasks) {
                     <td>✓</td>
                     <td>${task.task}</td>
                     <td>${task.notes}</td>
-                    <td><button id="deleteBtn">Delete</button></td>
+                    <td><button class="btn btn-danger" id="deleteBtn">Delete</button></td>
                 </tr>
             `);
         }
