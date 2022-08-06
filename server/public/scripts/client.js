@@ -3,6 +3,39 @@ $(document).ready(ready);
 function ready() {
     loadTasks()
     $('#addTask').on('click', addTask)
+    $('#tasks').on('click', '#deleteBtn', handleDelete)
+    $('#tasks').on('click', '#complete', complete)
+}
+
+function complete() {
+    const id = $(this).closest('tr').data('id');
+    console.log(id)
+    $.ajax({
+        method: 'PUT',
+        url: `/todo/${id}`,
+        data: {
+            complete: true
+        }
+    }).then(function (response) {
+        loadTasks()
+    }).catch(function(err) {
+        console.log(err)
+        alert('error in put')
+    })
+}
+
+function handleDelete() {
+    const id = $(this).closest('tr').data('id');
+    console.log(id)
+    $.ajax({
+        method: 'DELETE',
+        url: `/todo/${id}`
+    }).then(function(response) {
+        loadTasks(response)
+    }).catch(function(err) {
+        console.log(err)
+        alert('error in delete')
+    })
 }
 
 function addTask() {
@@ -43,15 +76,28 @@ function loadTasks() {
 function taskToDOM(tasks) {
     console.log('in append to dom')
     $('#tasks').empty();
-
+    $('#task').val('')
+    $('#notes').val('')
     for (let task of tasks) {
-        $('#tasks').append(`
-            <tr data-id={tasks[i].id}>
-                <td><button id="complete">Done</button></td>
-                <td>${task.task}</td>
-                <td>${task.notes}</td>
-                <td><button id="deleteBtn">Delete</button></td>
-            </tr>
-        `);
+        if (task.complete === false) {
+            $('#tasks').append(`
+                <tr data-id=${task.id}>
+                    <td><button id="complete">Done!</button></td>
+                    <td>${task.task}</td>
+                    <td>${task.notes}</td>
+                    <td><button id="deleteBtn">Delete</button></td>
+                </tr>
+            `);
+        } else {
+            $('#tasks').append(`
+                <tr data-id=${task.id}>
+                    <td>✓</td>
+                    <td>${task.task}</td>
+                    <td>${task.notes}</td>
+                    <td><button id="deleteBtn">Delete</button></td>
+                </tr>
+            `);
+        }
+        
     }
 }
