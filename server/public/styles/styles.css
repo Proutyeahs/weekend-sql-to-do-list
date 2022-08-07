@@ -1,5 +1,6 @@
 body {
     background-color: gray;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 table {
@@ -23,4 +24,12 @@ table td {
 
 .incomplete {
     background-color: hotpink;
+}
+
+h1 {
+    text-align: center;
+}
+
+main {
+    text-align: center;
 }

@@ -47,17 +47,21 @@ function addTask() {
 }
 
 function postTodo(taskToAdd) {
-    $.ajax({
-        type: 'POST',
-        url: '/todo',
-        data: taskToAdd
-    }).then(function(response) {
-        console.log('in post')
-        loadTasks(response)
-    }).catch(function(err) {
-        console.log(err)
-        alert('Issue in post')
-    })
+    if ($('#task').val() === "") {
+        alert("You cannot add an empty task!")
+    } else {
+        $.ajax({
+            type: 'POST',
+            url: '/todo',
+            data: taskToAdd
+        }).then(function(response) {
+            console.log('in post')
+            loadTasks(response)
+        }).catch(function(err) {
+            console.log(err)
+            alert('Issue in post')
+        })
+    }
 }
 
 function loadTasks() {
