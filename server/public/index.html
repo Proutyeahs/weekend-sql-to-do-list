@@ -7,6 +7,7 @@
     <title>weekend-to-do-app</title>
     <script src="./vendors/jQuery.js"></script>
     <script src="./scripts/client.js"></script>
+    <link rel="stylesheet" href="./vendors/bootstrap-5.2.0-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
@@ -16,11 +17,21 @@
     <main>
         <div>
             <h2>Add a task:</h2>
-            <input type="text" placeholder="Task" id="task"><input type="text" placeholder="Notes" id="notes"><button id="addTask">Add Task!</button>
+            <div class="row">
+                <div class="col">
+                    <input class="form-control" type="text" placeholder="Task" id="task">
+                </div>
+                <div class="col">
+                    <input class="form-control" type="text" placeholder="Notes" id="notes">
+                </div>
+                
+                    <button class="btn btn-success" id="addTask">Add Task!</button>
+                
+            </div>
         </div>
         <div>
             <h3>Tasks:</h2>
-            <table>
+            <table class="table table-striped-columns">
                 <thead>
                     <tr>
                         <th>Complete?</th>
@@ -38,5 +49,6 @@
     <footer>
 
     </footer>
+    <script src="./vendors/bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
