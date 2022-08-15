@@ -3,7 +3,20 @@
 TODO List
 
 ## Description
+Duration: August 5th-7th
 
-I created a todo list that saves tasks to the server. You are able to add new tasks and check off what tasks you have completed, as well as delete tasks you no longer need on the list.
+This app is a todo list that saves tasks to the server. Users are able to add new tasks and check off what tasks you have completed. A delete function was added inorder to remove tasks no longer needed on the list.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+This app was built with:
+JavaScript
+jQuery
+HTML
+CSS
+BootStrap
+Express.js
+SQL
+Node.js
+PG
+
+Link the the hosted application:
+https://boiling-eyrie-78144.herokuapp.com/
